@@ -36,7 +36,7 @@ function initCanvas() {
 }
 
 function draw_b1(x, y) {
-    fill(255);
+    fill(255, 120, 0);
     beginShape();
     vertex(2 * x, 1 * y + dy * 4);
     vertex(3 * x, 1 * y + dy * 4);
@@ -58,7 +58,7 @@ function draw_b1(x, y) {
 }
 
 function draw_t(x, y) {
-    fill(255);
+    fill(255, 120, 0);
     beginShape();
     vertex(9 * x - dx, 1 * y);
     vertex(10 * x - dx, 1 * y);
@@ -79,12 +79,12 @@ function draw_t(x, y) {
 }
 
 function draw_b2(x, y) {
-    fill(255);
+    fill(255, 120, 0);
     beginShape();
     vertex(14 * x - dx, 1 * y);
     vertex(15 * x, 1 * y);
-    vertex(15 * x, 4 * y);
-    vertex(18 * x - dy * 3, 4 * y);
+    vertex(15 * x, 4 * y - dy * 4);
+    vertex(18 * x - dy * 3, 4 * y - dy * 4);
     vertex(18 * x - dy * 3, 7 * y);
     vertex(14 * x - dx, 7 * y);
     vertex(14 * x - dx, 2 * y);
@@ -92,10 +92,10 @@ function draw_b2(x, y) {
 
     fill(0);
     beginShape();
-    vertex(15 * x - dx * 2, 5 * y);
-    vertex(17 * x, 5 * y);
-    vertex(17 * x, 6 * y);
-    vertex(15 * x - dx * 2, 6 * y);
-    vertex(15 * x - dx * 2, 5 * y);
+    vertex(15 * x - dx * 2 + 3 * dy, 5 * y - 3 * dy);
+    vertex(17 * x + 3 * dy, 5 * y - 3 * dy);
+    vertex(17 * x + 3 * dy, 6 * y - 3 * dy);
+    vertex(15 * x - dx * 2 + 3 * dy, 6 * y - 3 * dy);
+    vertex(15 * x - dx * 2 + 3 * dy, 5 * y - 3 * dy);
     endShape();
 }
