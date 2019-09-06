@@ -4,6 +4,8 @@
 
 let width_ratio = 5 / 100;
 let height_ratio = 12.5 / 100;
+let dx = 0;
+let dy = 0;
 
 function setup() {            
     noStroke();            
@@ -23,6 +25,9 @@ function windowResized() {
 function initCanvas() {
     let x_factor = width_ratio * windowWidth;
     let y_factor = height_ratio * windowHeight;
+
+    dx = (mouseX / x_factor);
+    dy = (mouseY / y_factor);
     
     resizeCanvas(windowWidth, windowHeight);
     draw_b1(x_factor, y_factor);
@@ -33,64 +38,64 @@ function initCanvas() {
 function draw_b1(x, y) {
     fill(255);
     beginShape();
-    vertex(2 * x, 1 * y);
-    vertex(3 * x, 1 * y);
+    vertex(2 * x, 1 * y + dy * 4);
+    vertex(3 * x, 1 * y + dy * 4);
     vertex(3 * x, 4 * y);
-    vertex(6 * x, 4 * y);
-    vertex(6 * x, 7 * y);
+    vertex(6 * x - dx, 4 * y);
+    vertex(6 * x - dx, 7 * y);
     vertex(2 * x, 7 * y);
     vertex(2 * x, 2 * y);
     endShape();
 
     fill(0);
     beginShape();
-    vertex(3 * x, 5 * y);
-    vertex(5 * x, 5 * y);
-    vertex(5 * x, 6 * y);
-    vertex(3 * x, 6 * y);
-    vertex(3 * x, 5 * y);
+    vertex(3 * x, 5 * y - dy * 3);
+    vertex(5 * x - dx * 2, 5 * y - dy * 3);
+    vertex(5 * x - dx * 2, 6 * y - dy * 3);
+    vertex(3 * x, 6 * y - dy * 3);
+    vertex(3 * x, 5 * y - dy * 3);
     endShape();
 }
 
 function draw_t(x, y) {
     fill(255);
     beginShape();
-    vertex(9 * x, 1 * y);
-    vertex(10 * x, 1 * y);
-    vertex(10 * x, 3 * y);
-    vertex(11 * x, 3 * y);
-    vertex(11 * x, 4 * y);
-    vertex(10 * x, 4 * y);
-    vertex(10 * x, 6 * y);
-    vertex(12 * x, 6 * y);
-    vertex(12 * x, 7 * y);
-    vertex(9 * x, 7 * y);
-    vertex(9 * x, 4 * y);
-    vertex(8 * x, 4 * y);
-    vertex(8 * x, 3 * y);
-    vertex(9 * x, 3 * y);
-    vertex(9 * x, 1 * y);
+    vertex(9 * x - dx, 1 * y);
+    vertex(10 * x - dx, 1 * y);
+    vertex(10 * x - dx, 3 * y - dx * 2);
+    vertex(11 * x - dx, 3 * y - dx * 2);
+    vertex(11 * x - dx, 4 * y - dx * 2);
+    vertex(10 * x - dx, 4 * y - dx * 2);
+    vertex(10 * x - dx, 6 * y - dy * 3);
+    vertex(12 * x - dx, 6 * y - dy * 3);
+    vertex(12 * x - dx, 7 * y);
+    vertex(9 * x - dx, 7 * y);
+    vertex(9 * x - dx, 4 * y - dx * 2);
+    vertex(8 * x - dx, 4 * y - dx * 2);
+    vertex(8 * x - dx, 3 * y - dx * 2);
+    vertex(9 * x - dx, 3 * y - dx * 2);
+    vertex(9 * x - dx, 1 * y);
     endShape();
 }
 
 function draw_b2(x, y) {
     fill(255);
     beginShape();
-    vertex(14 * x, 1 * y);
+    vertex(14 * x - dx, 1 * y);
     vertex(15 * x, 1 * y);
     vertex(15 * x, 4 * y);
-    vertex(18 * x, 4 * y);
-    vertex(18 * x, 7 * y);
-    vertex(14 * x, 7 * y);
-    vertex(14 * x, 2 * y);
+    vertex(18 * x - dy * 3, 4 * y);
+    vertex(18 * x - dy * 3, 7 * y);
+    vertex(14 * x - dx, 7 * y);
+    vertex(14 * x - dx, 2 * y);
     endShape();
 
     fill(0);
     beginShape();
-    vertex(15 * x, 5 * y);
+    vertex(15 * x - dx * 2, 5 * y);
     vertex(17 * x, 5 * y);
     vertex(17 * x, 6 * y);
-    vertex(15 * x, 6 * y);
-    vertex(15 * x, 5 * y);
+    vertex(15 * x - dx * 2, 6 * y);
+    vertex(15 * x - dx * 2, 5 * y);
     endShape();
 }
